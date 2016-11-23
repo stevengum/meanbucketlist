@@ -3,9 +3,9 @@
 
 <h4>Their items!</h4>
 <ul>
-    <li ng-repeat="item in items"> {{item.title}}: {{item.description}}</li>
+    <li ng-repeat="item in items"> {{item.title}}: {{item.description}}<input type="checkbox" disabled checked='item.completed' value=""></li>
 </ul>
-<h4>Items They Haveve joined</h4>
+<h4>Items They Have joined</h4>
 <ul>
-    <li ng-repeat="item in joined"> {{item.title}}: {{item.descriptiob}} | By: "{{item.author.username}}", {{item.createdAt | date:'mediumDate'}}</li>
+    <li ng-repeat="item in joined"> {{item.title}}: {{item.descriptiob}} | By: "{{item.author.username}}", {{item.createdAt | date:'mediumDate'}}<input type="checkbox" disabled checked='item.completed' value=""></li>
 </ul>

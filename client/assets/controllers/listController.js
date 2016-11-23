@@ -24,9 +24,9 @@ app.controller("listController", ['$scope','$routeParams','$location','usersFact
         })
     }
     $scope.completeItem = function(item) {
-        iF.completed(item, iF.getItems(function(items) {
-            console.log(items.joined);
+        iF.completed(item);
+        iF.getItems(function(items) {
             self.items = items;
-        }))
+        })
     }
 }])

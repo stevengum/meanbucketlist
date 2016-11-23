@@ -5,10 +5,12 @@ app.controller("userController", ['$scope', '$routeParams', '$location', 'usersF
     $scope.login=function (user_data) {
         if(user_data){
             console.log(user_data);
-            uF.login(user_data);
+            uF.login(user_data, function(err) {
+                self.errors= err
+            });
         }
         else {
-            console.log('no data');
+            console.log("submitted login info insufficient");
         }
     } //end $scope.login
     $scope.register = (new_user) =>{

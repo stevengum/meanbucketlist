@@ -1,6 +1,8 @@
 <div style="border: 1px solid black; margin: 5px; padding: 5px;">
     <h5>Login!</h5>
     <form ng-submit="login(user_data)">
+        <span class='errors'>{{uC.errors.name.message}}</span>
+        <span class='errors'>{{uC.errors.session.message}}</span>
         <input type="text" ng-model="user_data.username" placeholder="enter username here" ng-minlength="3">
         <input type="submit">
     </form>
@@ -8,7 +10,12 @@
 <div style="border: 1px solid black; margin: 5px; padding: 5px;">
     <h5>Register new user!</h5>
     <form ng-submit="register(new_user)">
-        <input type="text" placeholder="username" ng-model="new_user.username">
+        <input type="text" placeholder="username" ng-model="new_user.username"  pattern='^\w+$' minlength='3' required>
         <input type="submit" value="Register new user!">
     </form>
+    <div ng-messages='userForm.name.$error' class='errors'>
+      <p ng-message='minlength'>The user name is too short</p>
+      <p ng-message='required'>User name is required</p>
+      <p ng-message='pattern'>Invalid name</p>
+    </div>
 </div>

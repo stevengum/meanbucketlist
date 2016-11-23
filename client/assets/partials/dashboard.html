@@ -10,12 +10,7 @@
     </form>
     <h4>Before I Die I Want To...</h4>
     <ul>
-        <li ng-repeat="item in lC.items">"{{item.title}}", {{item.description}}  | {{item.joiner.username}}| By: {{item.author.username}}, {{item.createdAt | date:'mediumDate'}} <BR><BR></li>
-            <!-- <li ng-repeat="(key,value) in lC.items"> {{value}}</li> -->
-        <!-- <SPAN ng-repeat="(key,value) in item">{{key}}: {{value}}</SPAN></li> -->
-
-        <!-- <li ng-repeat="item in lC.items | orderBy:'-completed'">{{item.title}}, {{item.description}}, by {{item.author.username}} | {{item.createdAt | date:'mediumDate'}} <input type="checkbox" checked='item.completed' ng-click='completeItem(item)' ng-model="item.completed"><br>
-            Joiners: <span ng-repeat="joiner in item.joiner">{{joiner.username}}</span></li> -->
+        <li ng-repeat="item in lC.items | orderBy:'-completed'">"{{item.title}}", {{item.description}}  | {{item.joiner.username}}| By: {{item.author.username}}, {{item.createdAt | date:'mediumDate'}} <input type="checkbox" checked='item.completed' ng-click='completeItem(item)' ng-model="item.completed"></li>
     </ul>
 
 

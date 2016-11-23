@@ -15,6 +15,7 @@ module.exports=(function() {
                         if(err){res.json(err)}
                         else {
                             var itemInstance = new Item(req.body);
+                            itemInstance.completd = false;
                             itemInstance.save(function(err, item) {
                                 if(err){res.json(err)}
                                 else{

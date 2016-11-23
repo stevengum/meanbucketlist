@@ -3,7 +3,7 @@
 
 <h4>Their items!</h4>
 <ul>
-    <li ng-repeat="item in items"> {{item.title}}: {{item.description}}<input type="checkbox" disabled ng-checked='item.completed'></li>
+    <li ng-repeat="item in items"> {{item.title}}: {{item.description}} | {{item.createdAt | date:'mediumDate'}}<input type="checkbox" disabled ng-checked='item.completed'></li>
 </ul>
 <h4>Items They Have joined</h4>
 <ul>

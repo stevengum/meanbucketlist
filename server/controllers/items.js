@@ -49,6 +49,7 @@ module.exports=(function() {
             })
         },
         getItems: function(req,res) {
+            if(req.session.user){
             User.findOne({_id: req.session.user._id})
             // Item.find({author: req.session.user._id})
             .populate({
@@ -77,7 +78,7 @@ module.exports=(function() {
                     console.log(items);
                     res.json(items)
                 }
-            })
+            })}
         },
 
         completed: function(req,res) {

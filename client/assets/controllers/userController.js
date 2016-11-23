@@ -10,7 +10,7 @@ app.controller("userController", ['$scope', '$routeParams', '$location', 'usersF
             });
         }
         else {
-            console.log("submitted login info insufficient");
+            self.errors="Submitted login info insufficient! Have you registered?\n"
         }
     } //end $scope.login
     $scope.register = (new_user) =>{

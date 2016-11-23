@@ -25,6 +25,7 @@ app.factory('usersFactory', ['$http', '$location', '$routeParams', function ($ht
                 } else {
                     console.log(res.data.error);
                     $location.url('/');
+                    callback(res.data)
                 }
             })
         };

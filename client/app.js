@@ -12,11 +12,6 @@ app.config($routeProvider => {
         controller:'userController',
         controllerAs:'uC',
     })
-    .when('/success', {
-        templateUrl:'/partials/success.html',
-        controller:'userController',
-        controllerAs:'uC',
-    })
     .when('/dashboard', {
         templateUrl:'/partials/dashboard.html',
         controller:'listController',
@@ -27,17 +22,5 @@ app.config($routeProvider => {
         controller: 'itemController',
         controllerAs: 'iC'
     })
-    // .when('/user/:id', {
-    //     templateUrl: '',
-    //     controller: '',
-    //     controllerAs: '',
-    // })
-/*
-    .when('/', {
-        templateUrl:'',
-        controller:'',
-        controllerAs:'',
-    })
-*/
     .otherwise('/')
 })

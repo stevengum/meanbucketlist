@@ -4,15 +4,20 @@ app.controller("listController", ['$scope','$routeParams','$location','usersFact
     var self = this;
     uF.session(function(res) {
         console.log('results of uf.Session:',res);
-        $scope.data = res;
-        self.user = res;
-        iF.getUsers(function(res) {
-            $scope.users = res;
-        })
-        iF.getItems(function(items) {
-            self.items = items;
-            console.log('session', items);
-        })
+        if(res.error){
+            $scope.session_error=res.error
+        }
+        else {
+            $scope.data = res;
+            self.user = res;
+            iF.getUsers(function(res) {
+                $scope.users = res;
+            })
+            iF.getItems(function(items) {
+                self.items = items;
+                console.log('session', items);
+            })
+        }
     })  //end uF.session
     $scope.createItem = function(newItem) {
         newItem.author = self.user._id;

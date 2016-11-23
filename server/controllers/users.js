@@ -58,10 +58,11 @@ module.exports=(function () {
             if(req.session.user){
                 res.json(req.session.user);
             } else {
-                res.json({error:"User not logged in"})
+                res.json({error:"User not logged in, access denied."})
             }
         },
         getUsers: function(req,res){
+            if(req.session.user){
             User.find({}, function(err,users) {
                 for(var i = 0; i < users.length; i++) {
                     if(users[i]._id == req.session.user._id){
@@ -69,7 +70,7 @@ module.exports=(function () {
                     }
                 }
                 res.json(users);
-            })
+            })}
         },
         getUser: function(req,res) {
             User.findOne({_id: req.params.userId})

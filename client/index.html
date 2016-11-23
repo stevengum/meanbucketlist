@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Various MEAN Project</title>
+    <script src="angular/angular.js" charset="utf-8"></script>
+    <script src="angular-route/angular-route.js" charset="utf-8"></script>
+    <script src="angular-messages/angular-messages.js" charset="utf-8"></script>
+    <script src="app.js" charset="utf-8"></script>
+    <script src="factories/usersFactory.js" charset="utf-8"></script>
+    <script src="factories/itemsFactory.js" charset="utf-8"></script>
+    <!-- <script src="factories/itemsFactory.js" charset="utf-8"></script> -->
+    <!-- factories  -->
+    <script src="controllers/userController.js" charset="utf-8"></script>
+    <script src="controllers/listController.js" charset="utf-8"></script>
+    <script src="controllers/itemController.js" charset="utf-8"></script>
+    <!-- controllers -->
+
+</head>
+<body ng-app="myApp">
+    <header>
+        <h2>MEAN Bucket List!</h2>
+        <h3 style="background-color: grey; "><a href="#/login">Login</a> | <a href="/logout">Logout</a> | <a href="#/dashboard">Dashboard</a> | <a href="#/user">User</a></h3>
+    </header>
+    <ng-view>
+
+    </ng-view>
+</body>
+</html>

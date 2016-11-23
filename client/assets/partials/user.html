@@ -1,0 +1,11 @@
+<h3>Now Viewing:</h3>
+{{otherUser}}'s Bucket List
+
+<h4>Their items!</h4>
+<ul>
+    <li ng-repeat="item in items"> {{item.title}}: {{item.description}}</li>
+</ul>
+<h4>Items They Haveve joined</h4>
+<ul>
+    <li ng-repeat="item in joined"> {{item.title}}: {{item.descriptiob}} | By: "{{item.author.username}}", {{item.createdAt | date:'mediumDate'}}</li>
+</ul>

@@ -7,18 +7,43 @@ app.controller('itemController', ['$scope', '$routeParams', '$location', 'usersF
             this.user = data.username;
             $scope.user = data.username;
             $scope.data = data;
-            console.log(data);
+            // console.log(data);
             if($routeParams.id){
                 console.log($routeParams.id);
                 uF.getUser($routeParams.id, function(res) {
                     $scope.otherUser = res.username
                     $scope.items = res.item
                     $scope.joined = res.joined
+                    $scope.userId = res._id
                     console.log(res);
                 })
             }}
-        // iF.getUserItems($routeParams.userId, userItems);
     });
+    if($routeParams.userId && $routeParams.itemId) {
+        var data = {
+            userId: $routeParams.userId,
+            itemId: $routeParams.itemId,
+        }
+        // console.log(data);
+        iF.getTrip(data, function(res) {
+            $scope.otherUser = res.data.author.username;
+            $scope.item = res.data;
+            console.log('response from server via factory!', res.data);
+        })
+    }
+
+    $scope.clicked = function () {
+        console.log('clicked!');
+        for(var i = 0; i< $scope.item.joiner.length; i++){
+            if($scope.item.joiner._id == $scope.user._id){
+                console.log("incorrigible");
+            }
+        }
+    }
+    $scope.truthy = function() {
+        //ng-disabled="truthy()"
+        return true;
+    }
 
 
     // function userItems(user) {

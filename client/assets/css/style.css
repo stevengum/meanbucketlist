@@ -1,0 +1,64 @@
+*{}
+
+.item_header{
+    /*font-family: 'Bungee Inline', cursive;*/
+    font-size: 3em;
+    font-family: 'Bungee Shade', cursive;
+    margin: 0px;
+}
+header a{
+    font-family: 'Bungee', cursive;
+    color: black;
+    text-decoration: none;
+}
+.list_item_title:link{
+        font-family: 'Bungee Inline', cursive;
+        font-size: 1.5em;
+        /*font-family: 'Bungee Shade', cursive;*/
+        text-decoration: none;
+        margin: 0px;
+        color: black;
+}
+.list_item_title:visited{
+        font-size: 1.5em;
+        margin: 0px;
+        color: #770000;
+}
+.author{
+        font-family: 'Bungee Inline', cursive;
+        font-size: 1em;
+        /*font-family: 'Bungee Shade', cursive;*/
+        margin: 0px;
+}
+.item_date{
+    font-family: 'Bungee Inline', cursive;
+    font-size: .8em;
+    /*font-family: 'Bungee Shade', cursive;*/
+    margin: 0px;
+}
+.joiners{
+        font-family: 'Bungee Inline', cursive;
+        font-size: 1em;
+        /*font-family: 'Bungee Shade', cursive;*/
+        margin: 0px;
+}
+#site_header{
+    font-size: 3em;
+    font-family: 'Bungee Shade', cursive;
+    margin: 0px;
+}
+ul{
+    list-style: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+ul li{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#view{
+    margin: 0px;
+    background-color:darkgrey;
+    padding-bottom: 50px;
+}

@@ -1,0 +1,19 @@
+<h3>Now Viewing:</h3>
+
+<h1 class="item_header">{{item.title}}</h1>
+
+<h5 class="author">{{otherUser}}'s Bucket List Item...</h5>
+<p class="item_date">Created on: {{item.createdAt | date:'mediumDate'}}</p>
+<p style="border: 1px solid black; font-family: 'Roboto', sans-serif;">{{item.description}}</p>
+
+People accompanying {{otherUser}}!
+<ul>
+    <li ng-repeat="joiner in item.joiner" class="joiners">{{joiner.username}}</li>
+</ul>
+
+
+<div>
+    Would you like to join {{otherUser}}?
+    <input type="checkbox" ng-change="clicked()" ng-model="boop.boop">
+    <span></span>
+</div>

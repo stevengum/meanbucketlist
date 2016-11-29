@@ -22,7 +22,7 @@ app.controller("userController", ['$scope', '$routeParams', '$location', 'usersF
         }
     }
     uF.session(function(data) {
-        console.log('results of uf.Session:',data);
+        $scope.data = data;
     });
 
 

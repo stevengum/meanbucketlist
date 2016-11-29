@@ -1,5 +1,5 @@
 <div>
-    <h3>Welcome {{data.username}}!</h3>
+    <h3 class="item_header">Welcome {{data.username}}!</h3>
     <form ng-submit="createItem(newItem)">
         Title: <input type="text" placeholder="item!" ng-model="newItem.title">
         Description: <input type="text" placeholder="description! of item!" ng-model="newItem.description">
@@ -10,12 +10,17 @@
     </form>
     <h4>Before I Die I Want To...</h4>
     <ul>
-        <li ng-repeat="item in lC.items | orderBy:'-completed'">"{{item.title}}", {{item.description}}  | {{item.joiner.username}}| By: {{item.author.username}}, {{item.createdAt | date:'mediumDate'}} <input type="checkbox" checked='item.completed' ng-click='completeItem(item)' ng-model="item.completed"></li>
+        <li ng-repeat="item in lC.items | orderBy:'-completed'">
+        <p>
+            <a href="#/user/{{item.author._id}}/{{item._id}}" class="list_item_title">"{{item.title}}"</a>,
+            <br>
+             {{item.description}}  | {{item.joiner.username}}| By: {{item.author.username}}, {{item.createdAt | date:'mediumDate'}} <input type="checkbox" checked='item.completed' ng-click='completeItem(item)' ng-model="item.completed">
+         </p>
+         </li>
     </ul>
 
-
+    <h4>Other Bucket-Listers! (Click to view Profile!)</h4>
     <ul>
-        <h4>Other Bucket-Listers! (Click to view Profile!)</h4>
         <li ng-repeat="user in users"><a href="#/user/{{user._id}}">{{user.username}}</a></li>
     </ul>
 </div>

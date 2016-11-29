@@ -32,6 +32,13 @@ app.factory('itemsFactory', ['$http', '$location', function ($http, $location) {
                 console.log(res);
             })
         }
+        this.getTrip = function(data, callback) {
+            console.log('factpry data', data);
+            $http.post('/item/retrieve', data).then(function(res) {
+                console.log('response from server', res);
+                callback(res);
+            })
+        }
     };
     return new itemsFactory();
 } ])

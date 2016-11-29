@@ -3,7 +3,7 @@ console.log("listController.js loaded");
 app.controller("listController", ['$scope','$routeParams','$location','usersFactory', 'itemsFactory', function ($scope, $routeParams, $location, uF, iF) {
     var self = this;
     uF.session(function(res) {
-        console.log('results of uf.Session:',res);
+        // console.log('results of uf.Session:',res);
         if(res.error){
             $scope.session_error=res.error
         }
@@ -15,7 +15,7 @@ app.controller("listController", ['$scope','$routeParams','$location','usersFact
             })
             iF.getItems(function(items) {
                 self.items = items;
-                console.log('session', items);
+                // console.log('session', items);
             })
         }
     })  //end uF.session

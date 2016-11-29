@@ -22,5 +22,10 @@ app.config($routeProvider => {
         controller: 'itemController',
         controllerAs: 'iC'
     })
+    .when('/user/:userId/:itemId', {
+        templateUrl: '/partials/item.html',
+        controller: 'itemController',
+        controllerAs: 'iC'
+    })
     .otherwise('/')
 })

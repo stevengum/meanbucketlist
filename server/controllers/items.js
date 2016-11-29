@@ -52,7 +52,6 @@ module.exports=(function() {
         getItems: function(req,res) {
             if(req.session.user){
             User.findOne({_id: req.session.user._id})
-            // Item.find({author: req.session.user._id})
             .populate({
                 path:'joined',
                 model:'Item',
@@ -76,10 +75,39 @@ module.exports=(function() {
             .exec(function(err,items) {
                 if(err){res.json(err)}
                 else{
-                    console.log(items);
+                    // console.log(items);
                     res.json(items)
                 }
             })}
+        },
+        getItem: function (req,res) {
+            console.log("This is the itemId",req.body.itemId);
+            Item.findOne({_id: req.body.itemId})
+            .populate({
+                path:'author',
+                model:'User'
+            })
+            .populate({
+                path:'joiner',
+                model:'User'
+            })
+            .exec(function(err,item) {
+                if(err){
+                    console.log(err);
+                    res.json(err);
+                }
+                else{
+                    console.log(item);
+                    if(!item){
+                        res.json("Item not found.");
+                    } else {
+                        res.json(item);
+                    }
+                }
+            })
+
+            console.log('data from front', req.body);
+            console.log('messageafterreq');
         },
 
         completed: function(req,res) {

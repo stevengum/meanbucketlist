@@ -17,15 +17,19 @@
     <script src="controllers/listController.js" charset="utf-8"></script>
     <script src="controllers/itemController.js" charset="utf-8"></script>
     <!-- controllers -->
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Bungee" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- style -->
 
 </head>
 <body ng-app="myApp">
     <header>
-        <h2>MEAN Bucket List!</h2>
+        <h2 id="site_header" style="display: inline-flex; align-self: flex-end;">MEAN Bucket List!</h2>
         <h3 style="background-color: grey; "><a href="#/login">Login</a> | <a href="/logout">Logout</a> | <a href="#/dashboard">Dashboard</a></h3>
     </header>
-    <ng-view>
+    <div ng-view="" id="view">
 
-    </ng-view>
+    </div>
 </body>
 </html>

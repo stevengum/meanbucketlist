@@ -14,4 +14,5 @@ module.exports = function(app){
     app.get('/getItems', items.getItems);
     app.get('/getUser/:userId', users.getUser);
     app.post('/item/completed', items.completed);
+    app.post('/item/retrieve', items.getItem);
 }

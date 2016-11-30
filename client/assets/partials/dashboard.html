@@ -10,6 +10,7 @@
     </form>
     <h4>Before I Die I Want To...</h4>
     <ul>
+        <!-- Note that {{item.joiner.username}} currently does not work. Will be removed or layout will be reformatted to include the list of people who have joined the item -->
         <li ng-repeat="item in lC.items | orderBy:'-completed'">
         <p>
             <a href="#/user/{{item.author._id}}/{{item._id}}" class="list_item_title">"{{item.title}}"</a>,
@@ -19,8 +20,11 @@
          </li>
     </ul>
 
-    <h4>Other Bucket-Listers! (Click to view Profile!)</h4>
+    <h4>Other Bucket-Listers! (Click to view Profile!) Or... Search for them?</h4>
+    <form>
+        <input type="text" placeholder="Search not yet implemented!">
+        <input type="submit" value="Search for User"></form>
     <ul>
-        <li ng-repeat="user in users"><a href="#/user/{{user._id}}">{{user.username}}</a></li>
+        <li ng-repeat="user in users"><a href="#/user/{{user._id}}" class="user">{{user.username}}</a></li>
     </ul>
 </div>

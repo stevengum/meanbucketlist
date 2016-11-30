@@ -1,15 +1,15 @@
-<div style="border: 1px solid black; margin: 5px; padding: 5px;">
+<div class="login">
     <h5>Login!</h5>
-    <form ng-submit="login(user_data)">
-        <span class='errors' style="color:red;">{{uC.errors}}<br></span>
-        <span class='errors'>{{session_error}}</span>
+    <form ng-submit="login(user_data)" class="loginForm">
         <input type="text" ng-model="user_data.username" placeholder="enter username here" ng-minlength="3">
         <input type="submit">
     </form>
-</div>
-<div style="border: 1px solid black; margin: 5px; padding: 5px;">
+
+    <span class='errors' style="color:red;">{{uC.errors}}</span>
+    <span class='errors'>{{session_error}}</span>
+
     <h5>Register new user!</h5>
-    <form ng-submit="register(new_user)">
+    <form ng-submit="register(new_user)" class="loginForm">
         <input type="text" placeholder="username" ng-model="new_user.username"  pattern='^\w+$' minlength='3' required>
         <input type="submit" value="Register new user!">
     </form>

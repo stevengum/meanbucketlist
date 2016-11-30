@@ -1,16 +1,56 @@
-*{}
-
+*{
+    font-family: 'Roboto', sans-serif;
+}
+header{
+    margin-bottom: 0px;
+}
+#view{
+    margin: 0px;
+    background-color:darkgrey;
+    padding-bottom: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
 .item_header{
     /*font-family: 'Bungee Inline', cursive;*/
     font-size: 3em;
     font-family: 'Bungee Shade', cursive;
     margin: 0px;
 }
+.login{
+    margin: 0px;
+}
+.loginForm{
+    margin-bottom: 20px;
+}
+.user{
+    font-family: 'Bungee', cursive;
+
+}
 header a{
     font-family: 'Bungee', cursive;
     color: black;
     text-decoration: none;
+    margin-bottom: 0px;
 }
+h5{
+    font-family: 'Bungee', cursive;
+    color: black;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.class{
+    padding: 20px;
+}
+
+.user:link{
+    color: black;
+}
+.user:visited{
+    color: #770000;
+}
+
 .list_item_title:link{
         font-family: 'Bungee Inline', cursive;
         font-size: 1.5em;
@@ -55,10 +95,4 @@ ul{
 ul li{
     margin-top: 5px;
     margin-bottom: 5px;
-}
-
-#view{
-    margin: 0px;
-    background-color:darkgrey;
-    padding-bottom: 50px;
 }

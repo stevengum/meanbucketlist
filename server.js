@@ -3,7 +3,7 @@ const session = require('express-session');
 const bp = require('body-parser');
 const path = require('path');
 var app = express(),
-    port = 8000;
+    port = process.env.port || 8000;
 
 app.use(session({
     secret: 'secretKey',

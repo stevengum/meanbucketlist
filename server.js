@@ -1,9 +1,12 @@
 const express = require('express');
 const session = require('express-session');
 const bp = require('body-parser');
+const morgan = require('morgan');
 const path = require('path');
 var app = express(),
     port = process.env.port || 8000;
+
+app.use(morgan('dev'));
 
 app.use(session({
     secret: 'secretKey',

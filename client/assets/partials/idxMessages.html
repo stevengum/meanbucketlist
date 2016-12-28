@@ -1,0 +1,19 @@
+<h3>Hello {{user}}!</h3>
+
+<h4>These are your received messages:</h4>
+<table>
+    <thead>
+        <tr>
+            <th>Author</th>
+            <th>Message</th>
+            <th>Time Sent</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="message in userMessages">
+            <td>{{message.author.username}}</td>
+            <td>{{message.content}}</td>
+            <td>{{message.createdAt}}</td>
+        </tr>
+    </tbody>
+</table>

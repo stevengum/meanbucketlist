@@ -1,12 +1,12 @@
 <h3>Now Viewing:</h3>
 {{otherUser}}'s Bucket List
-
+<a href="#/message/{{userId}}">Message them?</a>
 <h4>Their items!</h4>
 <ul>
     <li ng-repeat="item in items"> <a href="#/user/{{userId}}/{{item._id}}" class="list_item_title">"{{item.title}}"</a>: {{item.description}} | {{item.createdAt | date:'mediumDate'}}<input type="checkbox" disabled ng-checked='item.completed'></li>
 </ul>
 <h4>Items They Have joined</h4>
 <ul>
-    <li ng-repeat="item in joined"> <a href="#/user/{{item.author._id}}/{{item._id}}" class="list_item_title">"{{item.title}}"</a>: {{item.descriptiob}} | By: "{{item.author.username}}", {{item.createdAt | date:'mediumDate'}}<input type="checkbox" disabled ng-checked="item.completed">
+    <li ng-repeat="item in joined"> <a href="#/user/{{item.author._id}}/{{item._id}}" class="list_item_title">"{{item.title}}"</a>: {{item.description}} | By: "{{item.author.username}}", {{item.createdAt | date:'mediumDate'}}<input type="checkbox" disabled ng-checked="item.completed">
     </li>
 </ul>

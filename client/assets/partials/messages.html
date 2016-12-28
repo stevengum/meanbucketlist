@@ -1,0 +1,10 @@
+<div>
+    <h2>Send your message to... {{otherUser}}</h2>
+    <form ng-submit="sendMessage(message, userId)">
+        <!-- <input type="text" disabled value="{{otherUser}}"> -->
+        <!-- <input type="text" ng-model="message.content" placeholder="Type your message here!"> -->
+        <textarea ng-model="message.content" id="messageBox" cols="40" rows="10" placeholder="Type your message for {{otherUser}} here!"></textarea>
+        <input id="messageSubmit" type="submit" value="Send Message!">
+    </form>
+
+</div>

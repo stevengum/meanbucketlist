@@ -17,6 +17,11 @@ app.config($routeProvider => {
         controller:'listController',
         controllerAs:'lC',
     })
+    .when('/user/messages', {
+        templateUrl: '/partials/idxMessages.html',
+        controller: 'messageController',
+        controllerAs: 'mC'
+    })
     .when('/user/:id', {
         templateUrl: '/partials/user.html',
         controller: 'itemController',
@@ -26,6 +31,11 @@ app.config($routeProvider => {
         templateUrl: '/partials/item.html',
         controller: 'itemController',
         controllerAs: 'iC'
+    })
+    .when('/message/:id', {
+        templateUrl: '/partials/messages.html',
+        controller: 'messageController',
+        controllerAs: 'mC'
     })
     .otherwise('/')
 })

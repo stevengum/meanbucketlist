@@ -1,4 +1,4 @@
-app.factory('itemsFactory', ['$http', '$location', function ($http, $location) {
+app.factory('itemsFactory', ['$http', '$location', ($http, $location) => {
     function itemsFactory() {
         var self = this;
         this.getUserEvents = function(userId, callback) {

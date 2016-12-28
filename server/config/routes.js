@@ -3,6 +3,7 @@ console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 
 var items = require('./../controllers/items.js');
 var users = require('./../controllers/users.js');
+var messages = require('./../controllers/messages.js');
 
 module.exports = function(app){
     app.post('/login', users.login);
@@ -15,4 +16,6 @@ module.exports = function(app){
     app.get('/getUser/:userId', users.getUser);
     app.post('/item/completed', items.completed);
     app.post('/item/retrieve', items.getItem);
+    app.post('/message/:userId', messages.sendMessage);
+    app.get('/user/messages', messages.listMessages);
 }

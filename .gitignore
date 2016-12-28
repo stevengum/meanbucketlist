@@ -1,1 +1,4 @@
 *.zip
+*.txt
+bower_components/
+node_modules/

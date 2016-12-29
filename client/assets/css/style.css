@@ -100,3 +100,15 @@ ul li{
  #messageBox{
      display: block;
  }
+.messageTable{
+
+}
+.messageTable thead, th{
+    border-bottom: 2px solid black;
+}
+.messageTable{
+
+}
+.even{
+    background-color: lightgrey;
+}

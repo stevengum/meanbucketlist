@@ -3,15 +3,14 @@
 <h4>These are your received messages</h4>
 <table class="messageTable">
     <thead>
-        <tr>
+        <tr class="even">
             <th>Author</th>
             <th>Message</th>
             <th>Time Sent</th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-init="id = data._id" ng-repeat="message in receivedMsgs" >
-            <!-- ng-if="message.author == data.id" -->
+        <tr ng-init="id = data._id" ng-repeat="message in receivedMsgs" ng-class-even="'even'">
             <td><a href="#/user/{{message.author._id}}">{{message.author.username}}</a></td>
             <td>{{message.content}}</td>
             <td>{{message.createdAt | date:'medium'}}</td>
@@ -22,16 +21,16 @@
 
 
 <h4>These are your sent messages:</h4>
-<table class="messageTable">
+<table class="messageTable" >
     <thead>
-        <tr>
+        <tr class="even">
             <th>Recepient</th>
             <th>Message</th>
             <th>Time Sent</th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-init="id = data._id" ng-repeat="message in authoredMsgs" >
+        <tr ng-init="id = data._id" ng-repeat="message in authoredMsgs" ng-class-even="'even'">
             <td><a href="#/user/{{message.recepient._id}}">{{message.recepient.username}}</a></td>
             <td>{{message.content}}</td>
             <td>{{message.createdAt | date:'medium'}}</td>

@@ -15,6 +15,6 @@ var MessageSchema = new mongoose.Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     }
-}, {timestamp: true});
+}, {timestamps: true});
 
 mongoose.model("Message", MessageSchema);

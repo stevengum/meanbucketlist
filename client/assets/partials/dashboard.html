@@ -1,5 +1,6 @@
 <div>
     <h3 class="item_header">Welcome {{data.username}}!</h3>
+    <a href="#/user/messages">Your messages</a>
     <form ng-submit="createItem(newItem)">
         Title: <input type="text" placeholder="item!" ng-model="newItem.title">
         Description: <input type="text" placeholder="description! of item!" ng-model="newItem.description">

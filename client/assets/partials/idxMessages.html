@@ -9,11 +9,13 @@
             <th>Time Sent</th>
         </tr>
     </thead>
+    {{data._id}}
     <tbody>
-        <tr ng-repeat="message in userMessages">
+        <tr ng-init="id = data._id" ng-repeat="message in userMessages" >
+            <!-- ng-if="message.author == data.id" -->
             <td>{{message.author.username}}</td>
             <td>{{message.content}}</td>
-            <td>{{message.createdAt}}</td>
+            <td>{{message.createdAt | date:'medium'}}</td>
         </tr>
     </tbody>
 </table>

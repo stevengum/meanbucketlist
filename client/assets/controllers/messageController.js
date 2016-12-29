@@ -3,7 +3,7 @@ app.controller('messageController', ['$scope','$routeParams','usersFactory','ite
         if(data.error) {
             $scope.session_error=data.error;
         } else {
-            this.user = data.uesrname;
+            // this.user = data.uesrname;
             $scope.user = data.username;
             $scope.data = data;
             if($routeParams.id){
@@ -20,7 +20,8 @@ app.controller('messageController', ['$scope','$routeParams','usersFactory','ite
     });
     //end of uF.session
     mF.listMessages(function (res){
-        $scope.userMessages = res.data;
+        console.log(res);
+        $scope.userMessages = res;
         console.log($scope.userMessages);
     });
 

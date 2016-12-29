@@ -20,7 +20,8 @@ module.exports = (function() {
             });
         },
         listMessages: function(req,res) {
-            Message.find({author: req.session.user.id})
+            // console.log(`ObjectId("${req.session.user._id}")`);
+            Message.find().or([{author: req.session.user._id}, {recepient: req.session.user._id}])
                 .populate({
                     path: 'author',
                     model: 'User'
@@ -33,6 +34,7 @@ module.exports = (function() {
                 if(err) {
                     res.json(err);
                 } else {
+                    console.log(messages);
                     res.json(messages);
                 }
             });

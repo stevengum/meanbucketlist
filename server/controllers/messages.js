@@ -55,7 +55,7 @@ module.exports = (function() {
                         received: received
                     }
                     // console.log(`List of messages from listMessages ${messages}`);
-                    res.json(messages);
+                    res.json(data);
                 }
             });
         },

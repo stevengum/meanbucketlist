@@ -1,7 +1,28 @@
 <h3>Hello {{user}}!</h3>
 
+<h4>These are your received messages</h4>
+<table class="messageTable">
+    <thead>
+        <tr>
+            <th>Author</th>
+            <th>Message</th>
+            <th>Time Sent</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-init="id = data._id" ng-repeat="message in receivedMsgs" >
+            <!-- ng-if="message.author == data.id" -->
+            <td><a href="#/user/{{message.author._id}}">{{message.author.username}}</a></td>
+            <td>{{message.content}}</td>
+            <td>{{message.createdAt | date:'medium'}}</td>
+            <td><button><a href="#/message/{{message.author._id}}">Reply!</a></button></td>
+        </tr>
+    </tbody>
+</table>
+
+
 <h4>These are your sent messages:</h4>
-<table>
+<table class="messageTable">
     <thead>
         <tr>
             <th>Recepient</th>
@@ -9,13 +30,12 @@
             <th>Time Sent</th>
         </tr>
     </thead>
-    {{data._id}}
     <tbody>
-        <tr ng-init="id = data._id" ng-repeat="message in userMessages" >
-            <!-- ng-if="message.author == data.id" -->
-            <td>{{message.recepient.username}}</td>
+        <tr ng-init="id = data._id" ng-repeat="message in authoredMsgs" >
+            <td><a href="#/user/{{message.recepient._id}}">{{message.recepient.username}}</a></td>
             <td>{{message.content}}</td>
             <td>{{message.createdAt | date:'medium'}}</td>
+            <td><button><a href="#/message/{{message.recepient._id}}">Send Message!</a></button></td>
         </tr>
     </tbody>
 </table>

@@ -20,9 +20,12 @@ app.controller('messageController', ['$scope','$routeParams','usersFactory','ite
     });
     //end of uF.session
     mF.listMessages(function (res){
-        console.log(res);
-        $scope.userMessages = res;
-        console.log($scope.userMessages);
+        // console.log(res);
+        $scope.authoredMsgs = res.authored;
+        $scope.receivedMsgs = res.received;
+        console.log($scope.authoredMsgs);
+        // $scope.userMessages = res;
+        // console.log($scope.userMessages);
     });
 
     $scope.sendMessage = function (message, userId) {

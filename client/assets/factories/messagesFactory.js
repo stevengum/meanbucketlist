@@ -28,6 +28,7 @@ app.factory('messagesFactory', ['$http','$location', ($http, $location) => {
                 if(res.data.error) {
                     console.log(res.data.error);
                 } else {
+                    console.log(res.data);
                     callback(res.data);
                 }
             })

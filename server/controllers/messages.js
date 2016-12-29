@@ -34,7 +34,27 @@ module.exports = (function() {
                 if(err) {
                     res.json(err);
                 } else {
-                    console.log(messages);
+                    console.log(`This is session's user's id: ${req.session.user._id}`);
+                    var authored = [],
+                        received = [];
+                    for (var i = 0; i < messages.length; i++) {
+                        // console.log("~~~~~~~~~~~~~~~~~~~~~~~~~");
+                        // console.log(messages[i].author._id);
+                        // console.log("~~~~~~~~~~~~~~~~~~~~~~~~~");
+                        if(messages[i].author._id == req.session.user._id){
+                            // console.log(messages[i]);
+                            authored.push(messages[i]);
+                        } else {
+                            received.push(messages[i]);
+                        }
+                    }
+                    console.log(authored);
+                    console.log(received);
+                    var data = {
+                        authored: authored,
+                        received: received
+                    }
+                    // console.log(`List of messages from listMessages ${messages}`);
                     res.json(messages);
                 }
             });

@@ -1,21 +1,25 @@
-app.controller('itemController', ['$scope', '$routeParams', '$location', 'usersFactory', 'itemsFactory', function ($scope,$routeParams,$location,uF,iF) {
+app.controller('itemController', ['$scope', '$routeParams', '$location','$window', 'usersFactory', 'itemsFactory', function ($scope,$routeParams,$location,$window,uF,iF) {
     var self = this;
     uF.session( data => {
         if(data.error){
-            $scope.session_error=data.error
+            $window.alert("Please login to access this page.");
+            $scope.session_error=data.error;
         } else {
-            this.user = data.username;
             $scope.user = data.username;
             $scope.data = data;
             if($routeParams.id){
-                console.log("Received this routeParmas.id: ", $routeParams.id);
-                uF.getUser($routeParams.id, function(res) {
-                    $scope.otherUser = res.username;
-                    $scope.items = res.item;
-                    $scope.joined = res.joined;
-                    $scope.userId = res._id;
-                    console.log(res);
-                });
+                console.log("Received this routeParams.id: ", $routeParams.id);
+                if ($routeParams.id == $scope.data._id){
+                    $location.url('/dashboard');
+                } else {
+                    uF.getUser($routeParams.id, function(res) {
+                        $scope.otherUser = res.username;
+                        $scope.items = res.item;
+                        $scope.joined = res.joined;
+                        $scope.userId = res._id;
+                        console.log(res);
+                    });
+                }
             }
         }
     });
@@ -25,13 +29,9 @@ app.controller('itemController', ['$scope', '$routeParams', '$location', 'usersF
             userId: $routeParams.userId,
             itemId: $routeParams.itemId,
         };
-
-        // console.log(data);
         iF.getTrip(data, function(res) {
             $scope.otherUser = res.data.author.username;
-            console.log(res.data.author);
             $scope.item = res.data;
-            console.log('response from server via factory!', res.data);
         })
     }
 
@@ -48,21 +48,4 @@ app.controller('itemController', ['$scope', '$routeParams', '$location', 'usersF
         //ng-disabled="truthy()"
         return true;
     }
-
-
-    // function userItems(user) {
-    //     self.otherUser = user;
-    //     self.done = user.items.concat(user.joined).filter(function(item) {
-    //         return item.completed;
-    //     })
-    //     self.pending = user.items.concat(user.joined).filter(function(item) {
-    //         return !item.completed;
-    //     })
-    // }
 }])
-
-
-// User.findOne({_id: req.session.userId})
-//     .populate({
-//         path: ''
-//     })

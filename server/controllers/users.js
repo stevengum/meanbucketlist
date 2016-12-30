@@ -7,7 +7,6 @@ var User = mongoose.model('User');
 module.exports=(function () {
     return{
         login: function(req,res){
-            // console.log(req.body);
             User.findOne({username: req.body.username}, function(err,user) {
                 if(err){console.log(user)}
                 else{

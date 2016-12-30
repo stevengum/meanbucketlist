@@ -1,8 +1,7 @@
-app.factory('usersFactory', ['$http', '$location', '$routeParams', function ($http,  $location, $routeParams) {
+app.factory('usersFactory', ['$http', '$location', '$routeParams','$window', function ($http,  $location, $routeParams, $window) {
     function UserFactory() {
         var self= this;
         this.login= function (user_data) {
-            console.log("userFactory user_data:",user_data);
             $http.post('/login', user_data).then(function (res) {
                 if(res){
                     $location.url('/dashboard')
@@ -10,9 +9,7 @@ app.factory('usersFactory', ['$http', '$location', '$routeParams', function ($ht
             })
         };
         this.register = function(new_user){
-            console.log("userFactory new_data:",new_user);
             $http.post('/register', new_user).then(function(res) {
-                console.log(res);
                 if(res){
                     $location.url('/dashboard')
                 }
@@ -23,7 +20,6 @@ app.factory('usersFactory', ['$http', '$location', '$routeParams', function ($ht
                 if(!res.data.error){
                     callback(res.data);
                 } else {
-                    console.log(res.data.error);
                     $location.url('/');
                     callback(res.data)
                 }

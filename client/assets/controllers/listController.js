@@ -1,10 +1,9 @@
-console.log("listController.js loaded");
-
-app.controller("listController", ['$scope','$routeParams','$location','usersFactory', 'itemsFactory', function ($scope, $routeParams, $location, uF, iF) {
+app.controller("listController", ['$scope','$routeParams','$location','$window','usersFactory', 'itemsFactory', function ($scope, $routeParams, $location, $window, uF, iF) {
     var self = this;
     uF.session(function(res) {
         // console.log('results of uf.Session:',res);
         if(res.error){
+            $window.alert("Please login to access this page.")
             $scope.session_error=res.error
         }
         else {
@@ -15,7 +14,7 @@ app.controller("listController", ['$scope','$routeParams','$location','usersFact
             })
             iF.getItems(function(items) {
                 self.items = items;
-                console.log(items);
+                // console.log(items);
             })
         }
     })  //end uF.session

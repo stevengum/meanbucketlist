@@ -1,10 +1,8 @@
-console.log("userController.js loaded");
-
 app.controller("userController", ['$scope', '$routeParams', '$location', 'usersFactory', function ($scope, $routeParams, $location, uF) {
     var self = this;
     $scope.login=function (user_data) {
         if(user_data){
-            console.log(user_data);
+            // console.log(user_data);
             uF.login(user_data, function(err) {
                 self.errors= err
             });
@@ -15,7 +13,7 @@ app.controller("userController", ['$scope', '$routeParams', '$location', 'usersF
     } //end $scope.login
     $scope.register = (new_user) =>{
         if(new_user){
-            console.log(new_user);
+            // console.log(new_user);
             uF.register(new_user);
         } else {
             console.log("don't send empty forms");

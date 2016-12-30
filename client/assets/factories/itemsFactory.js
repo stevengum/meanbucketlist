@@ -13,29 +13,29 @@ app.factory('itemsFactory', ['$http', '$location', ($http, $location) => {
         }
         this.getItems = function(callback) {
             $http.get('/getItems').then(function(res) {
-                console.log(res.data);
+                // console.log(res.data);
                 var items = res.data.joined.concat(res.data.item)
-                console.log('items:', items);
+                // console.log('items:', items);
                 callback(items);
             })
         }
         this.createItem = function(newItem) {
-            console.log('itemsFactory received new item: ', newItem);
+            // console.log('itemsFactory received new item: ', newItem);
             $http.post('/createItem', newItem).then(function(res) {
                 if(res.data.error){
-                    console.log(res.data);
+                    // console.log(res.data);
                 }
             })
         }
         this.completed = function (item) {
             $http.post('/item/completed', item).then(function(res) {
-                console.log(res);
+                // console.log(res);
             })
         }
         this.getTrip = function(data, callback) {
-            console.log('factpry data', data);
+            // console.log('factory data', data);
             $http.post('/item/retrieve', data).then(function(res) {
-                console.log('response from server', res);
+                // console.log('response from server', res);
                 callback(res);
             })
         }

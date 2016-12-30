@@ -1,6 +1,7 @@
-app.controller('messageController', ['$scope','$routeParams','usersFactory','itemsFactory','messagesFactory', function ($scope,$routeParams,uF,iF, mF) {
+app.controller('messageController', ['$scope','$routeParams','$window','usersFactory','itemsFactory','messagesFactory', function ($scope,$routeParams,$window,uF,iF, mF) {
     uF.session(data => {
         if(data.error) {
+            $window.alert("Please login to access this page.");
             $scope.session_error=data.error;
         } else {
             // this.user = data.uesrname;

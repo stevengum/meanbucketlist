@@ -5,11 +5,6 @@
         <input type="submit">
     </form>
 
-    <div ng-messages="registerForm.registerField.$error">
-        <div ng-message="minlength">Your username must be at least 3 characters long!</div>
-        <div ng-message="maxlength">Your username can only be up to 20 characters long!</div>
-        <div ng-message="required" ng-show="registerForm.registerField.$dirty">You can't register a new user without a username!</div>
-    </div>
 
     <span class='errors' style="color:red;">{{uC.errors}}</span>
     <span class='errors'>{{session_error}}</span>
@@ -19,9 +14,10 @@
         <input name="registerField" type="text" placeholder="username" ng-model="new_user.username"  pattern='^\w+$' ng-minlength='3' ng-maxlength='20' required>
         <input type="submit" value="Register new user!">
     </form>
-    <div ng-messages='userForm.name.$error' class='errors'>
-      <p ng-message='minlength'>The user name is too short</p>
-      <p ng-message='required'>User name is required</p>
-      <p ng-message='pattern'>Invalid name</p>
+    <div ng-messages="registerForm.registerField.$error">
+        <div ng-message="minlength">Your username must be at least 3 characters long!</div>
+        <div ng-message="maxlength">Your username can only be up to 20 characters long!</div>
+        <div ng-message="required" ng-show="registerForm.registerField.$dirty">You can't register a new user without a username!</div>
     </div>
+
 </div>

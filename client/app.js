@@ -37,5 +37,5 @@ app.config($routeProvider => {
         controller: 'messageController',
         controllerAs: 'mC'
     })
-    .otherwise('/')
+    .otherwise('/login')
 })

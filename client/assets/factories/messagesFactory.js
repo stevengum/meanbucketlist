@@ -16,7 +16,7 @@ app.factory('messagesFactory', ['$http','$location', ($http, $location) => {
                         $location.url('/dashboard');
 
                     } else {
-                        $location.url('/dashboard');
+                        $location.url('/user/messages');
                         callback(res);
                     }
                 });

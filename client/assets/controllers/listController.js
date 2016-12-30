@@ -15,7 +15,7 @@ app.controller("listController", ['$scope','$routeParams','$location','usersFact
             })
             iF.getItems(function(items) {
                 self.items = items;
-                // console.log('session', items);
+                console.log(items);
             })
         }
     })  //end uF.session

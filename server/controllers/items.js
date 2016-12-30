@@ -61,6 +61,14 @@ module.exports=(function() {
                 }
             })
             .populate({
+                path: 'joined',
+                model: 'Item',
+                populate: {
+                    path:'joiner',
+                    model:'User'
+                }
+            })
+            .populate({
                 path:'item',
                 model:'Item',
                 populate:{

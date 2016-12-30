@@ -4,6 +4,9 @@
 header{
     margin-bottom: 0px;
 }
+header h3{
+    background-color: grey;
+}
 #view{
     margin: 0px;
     background-color:darkgrey;
@@ -13,10 +16,23 @@ header{
     padding-right: 10px;
 }
 .item_header{
-    /*font-family: 'Bungee Inline', cursive;*/
     font-size: 3em;
     font-family: 'Bungee Shade', cursive;
     margin: 0px;
+}
+.miscHeader{
+    font-family: 'Bungee', cursive;
+}
+.viewMessages:link{
+    color: black;
+    text-decoration: none;
+}
+.viewMessages:visited{
+    color: black;
+    text-decoration: none;
+}
+.viewMessages:hover{
+    color: #770000;
 }
 .login{
     margin: 0px;
@@ -33,6 +49,9 @@ header a{
     color: black;
     text-decoration: none;
     margin-bottom: 0px;
+}
+header a:hover{
+    color: #770000;
 }
 h5{
     font-family: 'Bungee', cursive;
@@ -55,7 +74,6 @@ h5{
 .list_item_title:link{
         font-family: 'Bungee Inline', cursive;
         font-size: 1.5em;
-        /*font-family: 'Bungee Shade', cursive;*/
         text-decoration: none;
         margin: 0px;
         color: black;
@@ -68,19 +86,16 @@ h5{
 .author{
         font-family: 'Bungee Inline', cursive;
         font-size: 1em;
-        /*font-family: 'Bungee Shade', cursive;*/
         margin: 0px;
 }
 .item_date{
     font-family: 'Bungee Inline', cursive;
     font-size: .8em;
-    /*font-family: 'Bungee Shade', cursive;*/
     margin: 0px;
 }
 .joiners{
         font-family: 'Bungee Inline', cursive;
         font-size: 1em;
-        /*font-family: 'Bungee Shade', cursive;*/
         margin: 0px;
 }
 #site_header{
@@ -102,13 +117,25 @@ ul li{
      display: block;
  }
 .messageTable{
-
+    border-collapse: collapse;
 }
 .messageTable thead, th{
     border-bottom: 2px solid black;
 }
-.messageTable{
-
+.messageTable th a{
+    text-decoration: none;
+    color: black;
+}
+.messageTable th a:hover{
+    color: blue;
+    /*#770000;*/
+}
+.messageTable td a{
+    text-decoration: none;
+    color: black;
+}
+.messageTable td a:hover{
+    color: blue;
 }
 .even{
     background-color: lightgrey;

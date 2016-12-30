@@ -1,6 +1,7 @@
 <div>
     <h3 class="item_header">Welcome {{data.username}}!</h3>
-    <a href="#/user/messages">Your messages</a>
+    <h4><a href="#/user/messages" class="viewMessages">View Messages?</a></h4>
+    <h4>Before I Die I Want To...</h4>
     <form ng-submit="createItem(newItem)">
         Title: <input type="text" placeholder="item!" ng-model="newItem.title">
         Description: <input type="text" placeholder="description! of item!" ng-model="newItem.description">
@@ -9,14 +10,14 @@
         </select>
         <input type="submit" value="Add item!">
     </form>
-    <h4>Before I Die I Want To...</h4>
+    <h3 class="miscHeader">Your Bucket List!</h3>
     <ul>
-        <!-- Note that {{item.joiner.username}} currently does not work. Will be removed or layout will be reformatted to include the list of people who have joined the item -->
-        <li ng-repeat="item in lC.items | orderBy:'-completed'">
+        <li ng-repeat="item in lC.items | orderBy:'-completed'" >
         <p>
             <a href="#/user/{{item.author._id}}/{{item._id}}" class="list_item_title">"{{item.title}}"</a>,
             <br>
-             {{item.description}}  | {{item.joiner.username}}| By: {{item.author.username}}, {{item.createdAt | date:'mediumDate'}} <input type="checkbox" checked='item.completed' ng-click='completeItem(item)' ng-model="item.completed">
+             {{item.description}}  | {{item.joiner[0].username}} | By: <span ng-if="item.author.username==data.username"> You!</span>
+                 <span ng-if="item.author.username!=data.username">{{item.author.username}},</span> {{item.createdAt | date:'mediumDate'}} <input type="checkbox" checked='item.completed' ng-click='completeItem(item)' ng-model="item.completed">
          </p>
          </li>
     </ul>

@@ -4,13 +4,14 @@
 <table class="messageTable">
     <thead>
         <tr class="even">
-            <th>Author</th>
-            <th>Message</th>
-            <th>Time Sent</th>
+            <th><a href="" ng-click="sortType = 'author.username'; sortReverse = !sortReverse">Author</a></th>
+            <th><a href="" ng-click="sortType = 'content'; sortReverse = !sortReverse">Message</a></th>
+            <th><a href="" ng-click="sortType = 'createdAt'; sortReverse = !sortReverse">Time Sent</a></th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-init="id = data._id" ng-repeat="message in receivedMsgs" ng-class-even="'even'">
+        <tr ng-init="id = data._id" ng-repeat="message in receivedMsgs | orderBy:sortType:sortReverse" ng-class-even="'even'">
             <td><a href="#/user/{{message.author._id}}">{{message.author.username}}</a></td>
             <td>{{message.content}}</td>
             <td>{{message.createdAt | date:'medium'}}</td>
@@ -24,17 +25,24 @@
 <table class="messageTable" >
     <thead>
         <tr class="even">
-            <th>Recepient</th>
-            <th>Message</th>
-            <th>Time Sent</th>
+            <th><a href="" ng-click="sortSent = 'recepient.username'; sortSentReverse = !sortSentReverse">Recepient</a></th>
+            <th><a href="" ng-click="sortSent = 'content'; sortSentReverse = !sortSentReverse">Message</a></th>
+            <th><a href="" ng-click="sortSent = 'createdAt'; sortSentReverse = !sortSentReverse">Time Sent</a></th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-init="id = data._id" ng-repeat="message in authoredMsgs" ng-class-even="'even'">
-            <td><a href="#/user/{{message.recepient._id}}">{{message.recepient.username}}</a></td>
+        <tr ng-init="id = data._id" ng-repeat="message in authoredMsgs | orderBy:sortSent:sortSentReverse" ng-class-even="'even'">
+            <td>
+                <a href="#/user/{{message.recepient._id}}" >{{message.recepient.username}}</a>
+            </td>
             <td>{{message.content}}</td>
             <td>{{message.createdAt | date:'medium'}}</td>
-            <td><button><a href="#/message/{{message.recepient._id}}">Send Message!</a></button></td>
+            <td>
+                <button>
+                    <a href="#/message/{{message.recepient._id}}" >Send Message!</a>
+                </button>
+            </td>
         </tr>
     </tbody>
 </table>

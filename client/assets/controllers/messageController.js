@@ -20,13 +20,14 @@ app.controller('messageController', ['$scope','$routeParams','usersFactory','ite
     });
     //end of uF.session
     mF.listMessages(function (res){
-        // console.log(res);
         $scope.authoredMsgs = res.authored;
         $scope.receivedMsgs = res.received;
-        console.log($scope.authoredMsgs);
-        // $scope.userMessages = res;
-        // console.log($scope.userMessages);
     });
+    // sorting sent and received messages
+    $scope.sortType = 'createdAt';
+    $scope.sortReverse = false;
+    $scope.sortSent = 'createdAt';
+    $scope.sortSentReverse = false;
 
     $scope.sendMessage = function (message, userId) {
         mF.sendMessage(message, userId, function(res) {

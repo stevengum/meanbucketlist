@@ -40,6 +40,26 @@ header h3{
 .loginForm{
     margin-bottom: 20px;
 }
+#previewBox{
+    display: inline-flex;
+    width:100%;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+#previewBox div{
+    border: inset 2px black;
+    margin: 5px;
+    max-width: 40%;
+    padding: 10px;
+}
+#previewBox h5{
+    font-family: 'Roboto', sans-serif;
+
+}
+#previewBox ul {
+    list-style: initial;
+}
+
 .user{
     font-family: 'Bungee', cursive;
 
@@ -68,7 +88,10 @@ h5{
     color: black;
 }
 .user:visited{
-    color: #770000;
+    color: black;
+}
+.user:hover{
+    color: red;
 }
 
 .list_item_title:link{
@@ -79,10 +102,12 @@ h5{
         color: black;
 }
 .list_item_title:visited{
-        font-size: 1.5em;
-        margin: 0px;
         color: #770000;
 }
+.list_item_title:hover{
+    color: red;
+}
+
 .author{
         font-family: 'Bungee Inline', cursive;
         font-size: 1em;

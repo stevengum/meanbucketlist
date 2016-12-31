@@ -1,25 +1,28 @@
 <h3>Hello {{user}}!</h3>
-
-<h4>These are your received messages</h4>
-<table class="messageTable">
-    <thead>
-        <tr class="even">
-            <th><a href="" ng-click="sortType = 'author.username'; sortReverse = !sortReverse">Author</a></th>
-            <th><a href="" ng-click="sortType = 'content'; sortReverse = !sortReverse">Message</a></th>
-            <th><a href="" ng-click="sortType = 'createdAt'; sortReverse = !sortReverse">Time Sent</a></th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr ng-init="id = data._id" ng-repeat="message in receivedMsgs | orderBy:sortType:sortReverse" ng-class-even="'even'">
-            <td><a href="#/user/{{message.author._id}}">{{message.author.username}}</a></td>
-            <td>{{message.content}}</td>
-            <td>{{message.createdAt | date:'medium'}}</td>
-            <td><button><a href="#/message/{{message.author._id}}">Reply!</a></button></td>
-        </tr>
-    </tbody>
-</table>
-
+<div ng-if="!receivedMsgs[0]">
+    <h4>You don't have any received messages... Perhaps you should send one!</h4>
+</div>
+<div ng-if="receivedMsgs[0]">
+    <h4>These are your received messages</h4>
+    <table class="messageTable">
+        <thead>
+            <tr class="even">
+                <th><a href="" ng-click="sortType = 'author.username'; sortReverse = !sortReverse">Author</a></th>
+                <th><a href="" ng-click="sortType = 'content'; sortReverse = !sortReverse">Message</a></th>
+                <th><a href="" ng-click="sortType = 'createdAt'; sortReverse = !sortReverse">Time Sent</a></th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-init="id = data._id" ng-repeat="message in receivedMsgs | orderBy:sortType:sortReverse" ng-class-even="'even'">
+                <td><a href="#/user/{{message.author._id}}">{{message.author.username}}</a></td>
+                <td>{{message.content}}</td>
+                <td>{{message.createdAt | date:'medium'}}</td>
+                <td><button><a href="#/message/{{message.author._id}}">Reply!</a></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <h4>These are your sent messages:</h4>
 <table class="messageTable" >

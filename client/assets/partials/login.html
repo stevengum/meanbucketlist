@@ -1,5 +1,5 @@
 <div class="login">
-    <h5>Login!</h5>
+    <h4>Login!</h4>
     <form ng-submit="login(user_data)" class="loginForm">
         <input type="text" ng-model="user_data.username" placeholder="enter username here" ng-minlength="3">
         <input type="submit">
@@ -9,7 +9,7 @@
     <span class='errors' style="color:red;">{{uC.errors}}</span>
     <span class='errors'>{{session_error}}</span>
 
-    <h5>Register new user!</h5>
+    <h4>Register new user!</h4>
     <form name="registerForm" ng-submit="register(new_user)" class="loginForm">
         <input name="registerField" type="text" placeholder="username" ng-model="new_user.username"  pattern='^\w+$' ng-minlength='3' ng-maxlength='20' required>
         <input type="submit" value="Register new user!">
@@ -20,4 +20,23 @@
         <div ng-message="required" ng-show="registerForm.registerField.$dirty">You can't register a new user without a username!</div>
     </div>
 
+</div>
+<div id="previewBox">
+    <div>
+        <h5>Create a bucket list:</h5>
+        <p>
+            Have you ever thought to yourself that you need to keep track of your bucket list? Now you can, with MEAN Bucket List!
+            <ul>
+                <li>Create your own bucket list!</li>
+                <li>Have others join your list to complete things!</li>
+                <li>See something interesting? Join it!</li>
+            </ul>
+        </p>
+    </div>
+    <div>
+        <h5>Coordinate with others via Messaging:</h5>
+        <p>
+            You can message other users, using words and what not! Or via binary, morse code, Algolian ceremonial rhythms, whatever you wish! (Emojis not yet supported)
+        </p>
+    </div>
 </div>

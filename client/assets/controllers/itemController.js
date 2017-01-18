@@ -1,6 +1,5 @@
 app.controller('itemController', ['$scope', '$routeParams', '$location','$window', 'usersFactory', 'itemsFactory', function ($scope,$routeParams,$location,$window,uF,iF) {
-    var self = this;
-    uF.session( data => {
+    uF.session(data => {
         if(data.error){
             $window.alert("Please login to access this page.");
             $scope.session_error=data.error;

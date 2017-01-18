@@ -23,7 +23,9 @@
     </ul>
 
     <h4>Other Bucket-Listers! (Click to view Profile!) Or... Search for them?</h4>
-    <form>
+    <form ng-controller="userController as uC">
+        <p>{{uC.test}} </p>
+        {{tested}}
         <input type="text" placeholder="Search not yet implemented!">
         <input type="submit" value="Search for User"></form>
     <ul>

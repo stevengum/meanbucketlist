@@ -3,7 +3,11 @@ var mongoose = require('mongoose'),
     fs = require('fs'),
     modelsPath = path.join(__dirname, './../models');
 
-mongoose.connect('mongodb://localhost/mean_items');
+//when starting up mongod; use --port <port_number> to tell mongo to listen on this specific port.
+//inside of this mongoose config file; write the following line of code to tell mongoose to look for a different port:
+// mongoose.connect('mongodb://localhost:<port_number>/mean_items')
+
+mongoose.connect('mongodb://localhost:9000/mean_items');
 mongoose.Promise = global.Promise;
 
 fs.readdirSync(modelsPath).forEach(function(file) {

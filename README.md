@@ -17,9 +17,9 @@ _Not yet implemented:_
 - Better styling
 - Password verification 
 
-_Created using:
+_Created using:_
 - NodeJS
 - ExpressJS, Express-Session
 - MongoDB, Mongoose
-- Angular 1, Anguar-Route, Angular-Messages
+- Angular 1, Angular-Route, Angular-Messages
 - Body-Parser
